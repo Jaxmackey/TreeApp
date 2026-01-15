@@ -44,8 +44,15 @@ public class ExceptionHandlingMiddleware(
             ExceptionMessage = exception.Message
         };
 
-        await journalRepo.AddAsync(entry);
-        await journalRepo.SaveChangesAsync();
+        try
+        {
+            await journalRepo.AddAsync(entry);
+            await journalRepo.SaveChangesAsync();
+        }
+        catch (Exception logEx)
+        {
+            _logger.LogError(logEx, "Failed to log exception");
+        }
         
         var response = exception switch
         {
