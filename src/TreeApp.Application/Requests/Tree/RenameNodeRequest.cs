@@ -6,7 +6,7 @@ namespace TreeApp.Application.Requests.Tree;
 
 public record RenameNodeRequest(long NodeId, string NewNodeName) : IRequest<Unit>;
 
-public class RenameNodeHandler(INodeRepository nodeRepository) : IRequestHandler<RenameNodeRequest, Unit>
+internal class RenameNodeHandler(INodeRepository nodeRepository) : IRequestHandler<RenameNodeRequest, Unit>
 {
     public async Task<Unit> Handle(RenameNodeRequest request, CancellationToken ct)
     {

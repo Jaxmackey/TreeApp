@@ -6,7 +6,7 @@ namespace TreeApp.Application.Requests.Journal;
 
 public record GetJournalRangeRequest(int Skip, int Take, VJournalFilter? Filter) : IRequest<MRangeMJournalInfo>;
 
-public class GetJournalRangeHandler : IRequestHandler<GetJournalRangeRequest, MRangeMJournalInfo>
+internal class GetJournalRangeHandler : IRequestHandler<GetJournalRangeRequest, MRangeMJournalInfo>
 {
     private readonly IJournalRepository _journalRepository;
 

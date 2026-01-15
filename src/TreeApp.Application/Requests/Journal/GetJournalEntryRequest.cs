@@ -6,7 +6,7 @@ namespace TreeApp.Application.Requests.Journal;
 
 public record GetJournalEntryRequest(long EventId) : IRequest<MJournal?>;
 
-public class GetJournalEntryHandler(IJournalRepository journalRepository)
+internal class GetJournalEntryHandler(IJournalRepository journalRepository)
     : IRequestHandler<GetJournalEntryRequest, MJournal?>
 {
     public async Task<MJournal?> Handle(GetJournalEntryRequest request, CancellationToken ct)

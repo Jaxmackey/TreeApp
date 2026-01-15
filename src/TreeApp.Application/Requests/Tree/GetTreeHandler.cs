@@ -4,7 +4,7 @@ using TreeApp.Domain.Interfaces;
 
 namespace TreeApp.Application.Requests.Tree;
 
-public class GetTreeHandler(INodeRepository nodeRepository) : IRequestHandler<GetTreeRequest, MNode>
+internal class GetTreeHandler(INodeRepository nodeRepository) : IRequestHandler<GetTreeRequest, MNode>
 {
     public async Task<MNode> Handle(GetTreeRequest request, CancellationToken cancellationToken)
     {

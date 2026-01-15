@@ -6,7 +6,7 @@ namespace TreeApp.Application.Requests.Tree;
 
 public record CreateNodeRequest(string TreeName, long? ParentNodeId, string NodeName) : IRequest<Unit>;
 
-public class CreateNodeHandler(INodeRepository nodeRepository) : IRequestHandler<CreateNodeRequest, Unit>
+internal class CreateNodeHandler(INodeRepository nodeRepository) : IRequestHandler<CreateNodeRequest, Unit>
 {
     public async Task<Unit> Handle(CreateNodeRequest request, CancellationToken ct)
     {

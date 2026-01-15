@@ -6,7 +6,7 @@ namespace TreeApp.Application.Requests.Tree;
 
 public record DeleteNodeRequest(long NodeId) : IRequest<Unit>;
 
-public class DeleteNodeHandler(INodeRepository nodeRepository) : IRequestHandler<DeleteNodeRequest, Unit>
+internal class DeleteNodeHandler(INodeRepository nodeRepository) : IRequestHandler<DeleteNodeRequest, Unit>
 {
     public async Task<Unit> Handle(DeleteNodeRequest request, CancellationToken ct)
     {
